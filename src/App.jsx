@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route Component={DefaultLayout}>
-          <Route path="/" Component={HomePage} />
+          <Route index Component={HomePage} />
           <Route path="/about" Component={OurTeamPage} />
           <Route path="/posts" Component={PostIndex} />
           <Route path="*" Component={NotFoundPage} />

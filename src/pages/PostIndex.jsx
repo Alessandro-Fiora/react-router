@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import PostCard from "../components/PostCard";
 import DeleteModal from "../components/DeleteModal";
 
 const customApiUrl = import.meta.env.VITE_API_URL;
@@ -42,7 +42,7 @@ export default function PostIndex() {
         {articles.map(
           (article) =>
             article.title && (
-              <Card
+              <PostCard
                 key={article.id}
                 id={article.id}
                 title={article.title}

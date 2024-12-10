@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           {import.meta.env.VITE_APP_NAME || "React project"}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
