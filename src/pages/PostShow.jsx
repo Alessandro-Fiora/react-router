@@ -16,11 +16,15 @@ export default function PostShow() {
             navigate("/not-found");
             throw new Error("Ops, risorsa non trovata");
           }
+
+          if (res.status == 400) {
+            navigate("/not-found");
+            throw new Error("Parametro inviato invalido");
+          }
         }
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setPost(data);
       })
       .catch((err) => {
