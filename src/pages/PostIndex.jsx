@@ -35,7 +35,7 @@ export default function PostIndex() {
 
   return (
     <div className="container py-5">
-      <h1>All posts</h1>
+      <h1 className="mb-3">All posts</h1>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         {/* CARDS FOR POSTS */}
 
@@ -47,10 +47,6 @@ export default function PostIndex() {
                 id={article.id}
                 title={article.title}
                 img={article.img}
-                author={article.author}
-                content={article.content}
-                category={article.category}
-                published={article.published}
               />
             )
         )}
