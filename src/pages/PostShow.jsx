@@ -1,18 +1,30 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Label from "../components/Label";
 const customApiUrl = import.meta.env.VITE_API_URL;
 
 export default function PostShow() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState({});
 
   const fetchShowPost = (id) => {
     fetch(customApiUrl + id)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          if (res.status == 404) {
+            navigate("/not-found");
+            throw new Error("Ops, risorsa non trovata");
+          }
+        }
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
         setPost(data);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
 
