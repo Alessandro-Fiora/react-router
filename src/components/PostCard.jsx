@@ -18,7 +18,7 @@ export default function Card({ id, title, img }) {
           >
             <i className=" fa-solid fa-trash-can"></i>
           </button>
-          <button className="btn">
+          <button disabled className="btn edit-btn">
             <i className=" fa-solid fa-pencil"></i>
           </button>
 

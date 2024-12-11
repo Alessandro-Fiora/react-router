@@ -27,3 +27,7 @@
 .js {
   background-color: yellow;
 }
+
+.card .edit-btn {
+  border: none !important;
+}
